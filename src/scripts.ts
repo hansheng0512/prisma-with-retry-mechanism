@@ -11,20 +11,20 @@ async function main() {
     //
     // console.log('Created new user:', newUser);
 
-    withPrismaClient(async (prisma) => {
+    await withPrismaClient(async (prisma) => {
         const allUsers = await prisma.user.findMany();
         console.log('All users 1:', allUsers);
     });
 
-    // withPrismaClient(async (prisma) => {
-    //     const allUsers = await prisma.user.findMany();
-    //     console.log('All users 2:', allUsers);
-    // });
-    //
-    // withPrismaClient(async (prisma) => {
-    //     const allUsers = await prisma.user.findMany();
-    //     console.log('All users 3:', allUsers);
-    // });
+    await withPrismaClient(async (prisma) => {
+        const allUsers = await prisma.user.findMany();
+        console.log('All users 2:', allUsers);
+    });
+
+    await withPrismaClient(async (prisma) => {
+        const allUsers = await prisma.user.findMany();
+        console.log('All users 3:', allUsers);
+    });
 }
 
 main()
